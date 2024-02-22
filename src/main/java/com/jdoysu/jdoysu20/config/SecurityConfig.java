@@ -26,6 +26,8 @@ public class SecurityConfig {
                 .build();
     }
 
+    PasswordEncoder passwordEncoder;
+
 
 
 }

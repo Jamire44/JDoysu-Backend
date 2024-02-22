@@ -12,7 +12,7 @@ import static jakarta.persistence.GenerationType.SEQUENCE;
 @Getter
 @Setter
 @NoArgsConstructor
-public class LoginModel {
+public class User {
 
     @Id
     @SequenceGenerator(name = "login_sequence", sequenceName = "login_sequence", allocationSize = 1)
@@ -20,11 +20,11 @@ public class LoginModel {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "first_name", nullable = false)
-    private String firstName;
-
-    @Column(name = "last_name", nullable = false)
-    private String lastName;
+//    @Column(name = "first_name", nullable = false)
+//    private String firstName;
+//
+//    @Column(name = "last_name", nullable = false)
+//    private String lastName;
 
     @Column(name = "email", nullable = false, unique = true)
     private String email;
@@ -32,9 +32,9 @@ public class LoginModel {
     @Column(name = "password", nullable = false)
     private String password;
 
-    public LoginModel(String firstName, String lastName ,String email, String password) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public User(String email, String password) {
+//        this.firstName = firstName;
+//        this.lastName = lastName;
         this.email = email;
         this.password = password;
     }
