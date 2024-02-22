@@ -15,13 +15,6 @@ public class LoginController {
     @Autowired
     LoginService loginService;
 
-
-
-    @GetMapping("/home")
-    public String home(){
-        return "Welcome To Home";
-    }
-
     @GetMapping("/secured")
     public String secured(){
         return "Hello, Secured";

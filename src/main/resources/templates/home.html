@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0 user-scalable=no">
+    <title>JDoysu</title>
+    <link rel="stylesheet" href="../static/css/home.css"> <!-- Updated path -->
+</head>
+
+<body>
+<div id="container">
+    <div class="header">
+        <img src="../static/images/joker.png" alt="Logo of a clowns hat">
+
+        <h1>JDoysu</h1>
+    </div>
+</div>
+<hr>
+<h2 id="errors">0</h2>
+
+<!-- 4x4 board -->
+<div id="board"></div>
+<br>
+<div id="digits"></div>
+<br>
+<button id="resetButton" onclick="resetGameButton()">Reset</button>
+
+<!-- winning message -->
+<div id="winMessage" style="display: none;">
+    <h3>Congratulations! You Won!</h3>
+</div>
+
+<!-- lose message -->
+<div id="loseMessage" style="display: none;">
+    <h3>You have lost!</h3>
+</div>
+
+<script src="../static/js/home.js"></script> <!-- Updated path -->
+</body>
+</html>
