@@ -7,10 +7,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HomeController {
     // Renders Front-end
-        @GetMapping("/home")
+        @GetMapping("/JDoysu")
         public String home() {
             return "home"; //
         }
+
+    @GetMapping("/")
+    public String login(){
+        return "login";
+    }
     }
 
 

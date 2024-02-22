@@ -15,6 +15,8 @@ public class LoginController {
     @Autowired
     LoginService loginService;
 
+
+
     @GetMapping("/secured")
     public String secured(){
         return "Hello, Secured";

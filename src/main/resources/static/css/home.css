@@ -90,6 +90,8 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    color: black;
 }
 
 .number-selected {
@@ -127,6 +129,13 @@ hr {
 }
 
 #resetButton:hover {
+    background-color: #1E1E1E;
+    color: #37D0EE;
+}
+
+
+
+.number:hover {
     background-color: #1E1E1E;
     color: #37D0EE;
 }
