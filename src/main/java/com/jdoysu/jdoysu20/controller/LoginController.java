@@ -10,12 +10,22 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/login")
 public class LoginController {
 
     @Autowired
     LoginService loginService;
 
+
+
+    @GetMapping("/home")
+    public String home(){
+        return "Welcome To Home";
+    }
+
+    @GetMapping("/secured")
+    public String secured(){
+        return "Hello, Secured";
+    }
 
     //Create
     @PostMapping("/add")
