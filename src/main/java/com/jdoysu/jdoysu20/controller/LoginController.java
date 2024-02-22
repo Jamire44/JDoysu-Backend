@@ -4,6 +4,7 @@ import com.jdoysu.jdoysu20.model.LoginModel;
 import com.jdoysu.jdoysu20.repository.LoginRepository;
 import com.jdoysu.jdoysu20.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,13 +30,16 @@ public class LoginController {
     }
 
     //Update
-    @PostMapping("/update/{id}")
-    public void update(@PathVariable Long id, @RequestBody LoginModel loginModel){
-        loginService.updateUser(id,loginModel);
+    @PutMapping("/update/{id}")
+    public ResponseEntity<String> update(@PathVariable Long id, @RequestBody LoginModel loginModel){
+        return loginService.updateUser(id,loginModel);
     }
 
-
     //Delete
+    @DeleteMapping("/delete/{id}")
+    public void DeletingUser(@PathVariable Long id){
+        loginService.deleteUserById(id);
+    }
 
 
 
