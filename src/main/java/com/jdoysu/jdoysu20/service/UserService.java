@@ -21,6 +21,7 @@ public class UserService {
     @Autowired
     PasswordService passwordService;
 
+    // register User
     public void registerUser(User user){
         String hashedPassword = passwordService.hashPassword(user.getPassword());
         user.setPassword(hashedPassword);
