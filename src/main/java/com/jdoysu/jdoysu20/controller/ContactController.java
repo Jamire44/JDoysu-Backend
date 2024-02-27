@@ -4,11 +4,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class HomeController {
+public class ContactController {
 
-    @GetMapping("/home")
-    public String home(){
-        return "Front-end will be soon";
+    @GetMapping("/contact")
+    public String contact(){
+        return "Will get from DB";
     }
 
 }
