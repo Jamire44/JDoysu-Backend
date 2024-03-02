@@ -1,5 +1,6 @@
 package com.jdoysu.jdoysu20.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,6 +20,4 @@ public class Customer {
     private Long id;
     private String email;
     private String pwd;
-    private String role;
-
 }

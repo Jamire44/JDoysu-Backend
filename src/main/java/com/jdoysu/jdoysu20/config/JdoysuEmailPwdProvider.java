@@ -7,19 +7,14 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
+@Component
 public class JdoysuEmailPwdProvider implements AuthenticationProvider {
 
     private final CustomerRepository repository;
@@ -37,9 +32,7 @@ public class JdoysuEmailPwdProvider implements AuthenticationProvider {
         List<Customer> customers = repository.findByEmail(username);
         if (customers.size() > 0){
             if (passwordEncoder.matches(pwd, customers.get(0).getPwd())){
-                List<GrantedAuthority> authorities = new ArrayList<>();
-                authorities.add(new SimpleGrantedAuthority(customers.get(0).getRole()));
-                return new UsernamePasswordAuthenticationToken(username, pwd,authorities);
+                return new UsernamePasswordAuthenticationToken(username,pwd);
             } else {
                 throw new BadCredentialsException("Invalid Password");
             }
@@ -47,6 +40,8 @@ public class JdoysuEmailPwdProvider implements AuthenticationProvider {
             throw new BadCredentialsException("No User With Them Credentials");
         }
     }
+
+
 
     @Override
     public boolean supports(Class<?> authentication) {

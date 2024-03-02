@@ -15,9 +15,11 @@ public class JdoysuProjectSecurity {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
         http.csrf(AbstractHttpConfigurer::disable);
+        http.cors(AbstractHttpConfigurer::disable);
         http.authorizeHttpRequests((requests)->
                         requests.requestMatchers("/home").authenticated()
-                                .requestMatchers("/contact", "/register").permitAll())
+                                .requestMatchers("/contact", "/register", "login").permitAll()
+                                .anyRequest().authenticated())
                 .formLogin(Customizer.withDefaults())
                 .httpBasic(Customizer.withDefaults());
             return http.build();
